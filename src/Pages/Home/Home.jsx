@@ -11,9 +11,8 @@ const Home = () => {
         <div className='w-full bg-cover text-black flex justify-center h-[100%] bg-[url("https://th.bing.com/th/id/OIP.EwbatycHx_915hcNzd7vRgHaE8?w=4933&h=3289&rs=1&pid=ImgDetMain")]'>
             <div className="w-full flex gap-32">
 
-            <Home/> 
+            <Home/> {/**/}
             <Home/>
-
               <div className="w-1/3 p-10 mt-20 ml-20 bg-gray-50 bg-opacity-50 h-[450px] overflow-y-auto">
                 <div className="fonts-sans text-white text-center text-4xl">Register your Gym</div>
                 <input type="text" className='w-full my-10 p-1.5 rounded-lg ' placeholder='Enter Email'/>

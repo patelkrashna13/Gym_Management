@@ -23,9 +23,9 @@ const SignUp = () => {
     {
     forgotPassword && <Modal handleClose={handleClose}/> //if forgotPassword change then only it toggles to the true and Modal component is rendered
     }              
-    </div>
+    </div>//forgot password
   )
-  
+
 }
 
 export default SignUp

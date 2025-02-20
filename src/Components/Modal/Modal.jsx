@@ -6,6 +6,7 @@ import Home from '../../Pages/Home/home';
 const Modal = ({handleClose}) => {
 
 // const [click,subClick] = useState(false);
+//
 
 const handleButton = ()=>
 {

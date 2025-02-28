@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import  FitnessCenterIcon  from '@mui/icons-material/FitnessCenter'
 import AddIcon from '@mui/icons-material/Add'
@@ -12,11 +12,45 @@ import MemberCard from '../../Components/MemberCard/MemberCard'
 import Modal from '../../Components/Modal/Modal'
 import AddMemberShip from '../../Components/AddMemberShip/AddMemberShip'
 import AddMembers from '../../Components/AddMembers/AddMembers'
+import { LastPage } from '@mui/icons-material'
 
 const Member = () => {
 
   const[addMemberShip,setAddMemberShip] = useState(false)
   const [addMember,setAddMember] = useState(false)
+  const[currentPage,setCurrentPage] = useState(1)
+
+  const[startFrom,setStartFrom] = useState(1)
+  const[endTo,setEndTo] = useState(9)
+  const[totalData,setTotalData] = useState(0)
+
+  const[noOfPage,setNoOfPage] = useState(0)
+
+  useEffect(()=>{
+    fetchData();
+  },[])
+
+  const fetchData = async() =>{
+    let totalData = 52
+    setTotalData(totalData)
+
+    let extraPage = totalData%limit===0?0:1
+    let totalPage = parseInt(totalData/limit) + extraPage;
+    setNoOfPage(totalPage)
+
+    if(totalData===0)
+    {
+      setStartFrom(-1)
+      setEndTo(0)
+    }
+    
+    else if(totalData<10)
+    {
+      setStartFrom(0)
+      setEndTo(totalData)
+    }
+
+  }
 
   const handleMemberShip = () =>{
     setAddMemberShip(prev=>!prev)
@@ -24,6 +58,37 @@ const Member = () => {
 
   const handleMember = () =>{
     setAddMember(prev=>!prev)
+  }
+
+  const handlePrev = () =>{
+    if(currentPage!==1)
+    {
+      let currPage = currentPage - 1;
+      setCurrentPage(currPage) 
+      var from = (currPage-1)*9
+      var to = (currPage*9)
+
+      setStartFrom(from)
+      setEndTo(to)
+    }
+  }
+
+  const handleNext = () =>{
+    if(currentPage!==noOfPage)
+    {
+      let currPage = currentPage+1
+      setCurrentPage(currPage)
+      var from = (currPage-1)*9
+      var to = (currPage*9)
+      if(to>totalData)
+      {
+        to = totalData
+      }
+      setStartFrom(from)
+      setEndTo(to)
+      
+
+    }
   }
 
   return (
@@ -50,9 +115,9 @@ const Member = () => {
       <div className="mt-5 text-xl flex justify-between text-slate-900">
         <div className="ml-[1rem]">Total Members</div>
         <div className="flex gap-5">
-          <div className="">1 - 9 of 52 Members</div>
-          <div className={`w-8 h-8 cursor-pointer border-2 flex items-center justify-center hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500`}><ChevronLeftIcon/></div>
-          <div className=""><ChevronRightIcon/></div>
+          <div className="">{startFrom} - {endTo} of {totalData} Members</div>
+          <div className={`w-8 h-8 cursor-pointer border-2 flex items-center justify-center hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ${currentPage===1? 'bg-gray-200 text-gray-400':null }`} onClick={()=>{handlePrev()}}><ChevronLeftIcon/></div>
+          <div className={`w-8 h-8 cursor-pointer border-2 flex items-center justify-center hover:text-white hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ${currentPage===noOfPage? 'bg-gray-200 text-gray-400':null }`} onClick={()=>{handleNext()}}><ChevronRightIcon/></div>
         </div>
       </div>
 

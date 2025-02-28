@@ -15,6 +15,7 @@ const AddMembers = () => {
                 </select>
 
                 <input type="file" />
+                
 
                 <div className="p-3 ml-[18rem] mt-[5rem] border-2 w-40 text-lg h-16 text-center mx-auto bg-slate-900 text-white rounded-xl cursor-pointer ">
                     Register

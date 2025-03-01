@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Home from './Pages/Home/home';
+import Home from './Pages/Home/Home';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Member from './Pages/Member/Member';
+import GeneralUser from './Pages/GeneralUser/GeneralUser';
+import MemberDetail from './Pages/MemberDetail/MemberDetail';
 
 const App = () => {
   const navigate = useNavigate();
@@ -29,6 +31,8 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/member' element={<Member />} />
+        <Route path='/specific/:page' element={<GeneralUser/>}></Route>
+        <Route path='/member/:id' element={<MemberDetail/>}></Route>
       </Routes>
     </div>
   );

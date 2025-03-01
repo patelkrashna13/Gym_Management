@@ -33,6 +33,7 @@ const Member = () => {
   const fetchData = async() =>{
     let totalData = 52
     setTotalData(totalData)
+    const limit = 9;  
 
     let extraPage = totalData%limit===0?0:1
     let totalPage = parseInt(totalData/limit) + extraPage;

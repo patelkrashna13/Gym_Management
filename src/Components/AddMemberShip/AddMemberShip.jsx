@@ -5,26 +5,26 @@ const AddMemberShip = () => {
     <div className='text-black'>
       <div className="flex flex-wrap gap-5 items-center justify-center">
 
-        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-red-600">
             <div className="">1 Months Membership</div>
             <div className="">Rs 1000</div>
         </div>
 
-        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-red-600">
             <div className="">2 Months Membership</div>
             <div className="">Rs 2000</div>
         </div>
 
-        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-red-600">
             <div className="">3 Months Membership</div>
             <div className="">Rs 3000</div>
         </div>
 
-        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-red-600">
             <div className="">4 Months Membership</div>
             <div className="">Rs 4000</div>
         </div>
-        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="text-lg bg-slate-900 text-white cursor-pointer border-2 pl-2 pr-2 flex-col gap-3 justify-between pt-1 pb-1 rounded-xl font-semibold hover:bg-red-600">
             <div className="">5 Months Membership</div>
             <div className="">Rs 5000</div>
         </div>

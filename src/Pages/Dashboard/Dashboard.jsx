@@ -15,6 +15,10 @@ const Dashboard = () => {
   const[accordianDashBoard,setAccordianDashboard] = useState(false);
   const ref = useRef();//In React, the useRef() hook is used to create a mutable reference that persists across renders without causing a re-render when its value changes.
 
+  const handleOnClickMenu = (value) =>{
+    sessionStorage.setItem('func',value);
+  }
+
   useEffect(()=>{
     const checkIfClickedOutside = e =>{
       if(accordianDashBoard && ref.current && !ref.current.contains(e.target))
@@ -62,49 +66,49 @@ const Dashboard = () => {
           
           
           {/* Card-2 */}
-          <div className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
+          <Link to={'/specific/monthly'} onClick={()=>{handleOnClickMenu("monthlyJoined")}} className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
             <div className="h-3 rounded-t-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
             <div className="py-7 px-5 flex-col justify-center items-center w-full text-center rounded-b-lg hover:bg-slate-800 hover:text-white delay-2000 duration-500">
             <SignalCellularAltIcon sx={{color:"green", fontSize:"50px"}}/>
             <p className='text-xl my-3 font-semibold font-mono'>Monthly Joined</p>
             </div>
-          </div>
+          </Link>
 
           {/* Card-3 */}
-          <div className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
+          <Link to={'/specific/expire-with-in-3-days'} onClick={()=>{handleOnClickMenu("threeDayExpire")}} className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
             <div className="h-3 rounded-t-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
             <div className="py-7 px-5 flex-col justify-center items-center w-full text-center rounded-b-lg hover:bg-slate-800 hover:text-white delay-2000 duration-500">
             <AccessAlarmAlticon sx={{color:"red", fontSize:"50px"}}/>
             <p className='text-xl my-3 font-semibold font-mono'>Expiring Within 3 days</p>
             </div>
-          </div>
+          </Link>
 
            {/* Card-4 */}
-          <div className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
+          <Link to={'/specific/expire-with-in-4-7-days'} onClick={()=>{handleOnClickMenu("fourToSevenDaysExpire")}} className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
             <div className="h-3 rounded-t-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
             <div className="py-7 px-5 flex-col justify-center items-center w-full text-center rounded-b-lg hover:bg-slate-800 hover:text-white delay-2000 duration-500">
             <AccessAlarmAlticon sx={{color:"red", fontSize:"50px"}}/>
             <p className='text-xl my-3 font-semibold font-mono'>Expiring Within 4-7 days</p>
             </div>
-          </div>
+          </Link>
 
            {/* Card-5 */}
-          <div className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
+          <Link to={'/specific/expired'} onClick={()=>{handleOnClickMenu("expired")}} className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
             <div className="h-3 rounded-t-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
             <div className="py-7 px-5 flex-col justify-center items-center w-full text-center rounded-b-lg hover:bg-slate-800 hover:text-white delay-2000 duration-500">
             <ErrorIcon sx={{color:"red", fontSize:"50px"}}/>
             <p className='text-xl my-3 font-semibold font-mono'>Expired</p>
             </div>
-          </div>
+          </Link>
 
            {/* Card-6 */}
-          <div className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
+          <Link to={'/specific/inactive-members'} onClick={()=>{handleOnClickMenu("inActiveMembers")}} className="w-full h-fit border-2 bg-white rounded-lg cursor-pointer">
             <div className="h-3 rounded-t-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
             <div className="py-7 px-5 flex-col justify-center items-center w-full text-center rounded-b-lg hover:bg-slate-800 hover:text-white delay-2000 duration-500">
             <ReportIcon sx={{color:"brown", fontSize:"50px"}}/>
             <p className='text-xl my-3 font-semibold font-mono'>Inactive Members</p>
             </div>
-          </div>
+          </Link>
 
         </div>
 

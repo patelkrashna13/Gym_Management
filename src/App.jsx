@@ -18,6 +18,11 @@ const App = () => {
       setIsLogin(true);
       navigate('/dashboard');
     } 
+
+    else
+    {
+      setIsLogin(false)
+    }
   }, [localStorage.getItem("isLogin")]); 
   
 

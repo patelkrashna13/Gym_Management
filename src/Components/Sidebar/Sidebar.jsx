@@ -3,11 +3,13 @@ import HomeIcon from '@mui/icons-material/Home'
 import GroupIcon from '@mui/icons-material/Group'
 import LogoutIcon from '@mui/icons-material/Logout'
 import { useState,useEffect } from 'react'
-import { Link,useLocation } from 'react-router-dom'
+import { Link,useLocation, useNavigate } from 'react-router-dom'
 
 const Sidebar = () => {
     const [greeting,setGreeting] = useState("")
     const location = useLocation()
+    const navigate = useNavigate()
+
     //uselocation shows the location of the url like 
     // https://localhost:5173/dashboard
     //if location is at /dashboard then it changes the UI by our styling 
@@ -29,6 +31,12 @@ const Sidebar = () => {
     else {
     setGreeting( "Good Night")
     }
+}
+
+const handleLogOut = async () =>{
+    sessionStorage.clear()
+    navigate('/')
+
 }
 
     useEffect(()=>{ //This hook is used for the changes applied after the 
@@ -61,14 +69,10 @@ const Sidebar = () => {
                 <div className="">Members</div>
             </Link>
             
-            <div className="flex items-center mt-5 gap-2 font-semibold text-xl bg-slate-900 p-3 rounded-xl cursor-pointer hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-black">
+            <div onClick={()=>{handleLogOut()}} className="flex items-center mt-5 gap-2 font-semibold text-xl bg-slate-900 p-3 rounded-xl cursor-pointer hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-black">
                 <div className=""><LogoutIcon/></div>
                 <div className="">Logout</div>
             </div>
-
-            
-
-            
 
         </div>
         
